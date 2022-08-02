@@ -13,29 +13,36 @@
 
     <!--LISTA DOS PRODUTOS-->
     <ul>
-        <li>Arroz</li>
-        <li>Feijão</li>
-        <li>Macarrão</li>
-
+    
     </ul>
 
     <script>
 
         //Selecionando os elementos do HTML
-        var $lista = document.querySelector('ul');
-        var $produto = document.querySelector('#produto');
-        var $botao = document.querySelector('#btn');
+var $lista = document.querySelector('ul');
+var $produto = document.querySelector('#produto');
+var $botao = document.querySelector('#btn');
 
-        //invocando a função ao clicar no botão
-        $botao.addEventListener('click',addProduto);
+//invocando a função ao clicar no botão
+$botao.addEventListener('click',addProduto);
 
-        //função que irá cadastrar novos items a lista
-        function addProduto() {
-            var item = '<li>' + $produto.value + '</li>';
-          $lista.innerHTML = $lista.innerHTML + item;
-          $produto.value = '';
-          $produto.focus();
-        }
+//função que irá cadastrar novos items a lista
+function addProduto() {
+    var item = '<li>' + $produto.value + '</li>';
+  $lista.innerHTML = $lista.innerHTML + item;
+  $produto.value = '';
+  $produto.focus();
+}
+
+//utilizando os métodos key e keyCode dentro de uma função que irá identificar uma tecla específica que também poderá acionar a função ao ser precionada.
+$produto.addEventListener('keyup', function(descobrirTecla){
+//console.log(descobrirTecla.keyCode);
+
+//estrutura condicional que irá acionar a função que adiciona o produto na lista se a tecla enter for precionada.
+if(descobrirTecla.keyCode === 13) {
+    addProduto();
+}
+})
 
     </script>
 
