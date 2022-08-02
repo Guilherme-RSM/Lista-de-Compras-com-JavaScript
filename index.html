@@ -7,21 +7,26 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
 
+    <section id="listagem">
+        <h1>Lista de Compras</h1>
     <!--Input que recebera os novos produtos a serem listados-->
     <input type="text" id="produto" placeholder="Digite o nome do produto">
-    <button id="btn">Cadastrar Produto </button>   
+    <button id="btn-cadastrar-produto">Cadastrar Produto </button>   
 
     <!--LISTA DOS PRODUTOS-->
     <ul>
     
     </ul>
 
+    </section>
+
+
     <script>
 
         //Selecionando os elementos do HTML
 var $lista = document.querySelector('ul');
 var $produto = document.querySelector('#produto');
-var $botao = document.querySelector('#btn');
+var $botao = document.querySelector('#btn-cadastrar-produto');
 
 //invocando a função ao clicar no botão
 $botao.addEventListener('click',addProduto);
